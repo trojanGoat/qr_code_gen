@@ -1,0 +1,12 @@
+{
+  "name": "vcard-qr-generator",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "echo \"Building static site...\" && rm -rf dist && cp -r src dist",
+    "publish_dist": "echo \"Running version $npm_package_version\" && ./scripts/publish_dist.sh",
+    "version": "echo \"Running version $npm_package_version\" && npm run publish_dist",
+    "postversion": "echo \"Running version $npm_package_version\" && git push && git push --tags"
+  }
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vCard QR Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="app.css">
+    <script src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
+</head>
+<body>
+    <main class="glass-panel">
+        <header>
+            <h1>vCard QR Generator</h1>
+            <p>Create a QR code that instantly adds your contact info to a phone.</p>
+        </header>
+
+        <div class="app-layout">
+            <div class="controls">
+                
+                <h3>Contact Details</h3>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" placeholder="Jorge">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" placeholder="Razon">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="text" id="phone" placeholder="+1-555-555-5555">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" id="email" placeholder="jorge@jorgerazon.com">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="company">Company</label>
+                        <input type="text" id="company" placeholder="My Company">
+                    </div>
+                    <div class="form-group">
+                        <label for="title">Job Title</label>
+                        <input type="text" id="title" placeholder="Software Engineer">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="website">Website</label>
+                    <input type="text" id="website" placeholder="https://jorgerazon.com">
+                </div>
+
+                <h3>QR Styling</h3>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="dotsColor">Dots Color</label>
+                        <input type="color" id="dotsColor" value="#000000">
+                    </div>
+                    <div class="form-group">
+                        <label for="bgColor">Background Color</label>
+                        <input type="color" id="bgColor" value="#ffffff">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="dotsType">Dots Style</label>
+                        <select id="dotsType">
+                            <option value="square">Square</option>
+                            <option value="dots">Dots</option>
+                            <option value="rounded" selected>Rounded</option>
+                            <option value="extra-rounded">Extra Rounded</option>
+                            <option value="classy">Classy</option>
+                            <option value="classy-rounded">Classy Rounded</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="cornersType">Corners Style</label>
+                        <select id="cornersType">
+                            <option value="square">Square</option>
+                            <option value="dot">Dot</option>
+                            <option value="extra-rounded" selected>Extra Rounded</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="logoUpload">Upload Logo (Optional)</label>
+                    <div class="file-upload-wrapper">
+                        <input type="file" id="logoUpload" accept="image/png, image/jpeg, image/svg+xml">
+                        <span id="logoFileName">Choose a file...</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="logoSize">Logo Size</label>
+                    <input type="range" id="logoSize" min="0.2" max="0.6" step="0.05" value="0.4" style="width: 100%; cursor: pointer;">
+                </div>
+
+                <button id="downloadBtn" class="primary-btn">Download Contact QR</button>
+            </div>
+
+            <div class="preview-area">
+                <div class="qr-container" id="qrCodePreview">
+                    <!-- QR code will be generated here -->
+                </div>
+                <div class="preview-label">Live Preview</div>
+            </div>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
